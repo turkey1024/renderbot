@@ -2,6 +2,9 @@ name = "render-keepalive"
 compatibility_date = "2024-05-01"
 compatibility_flags = ["nodejs_compat"]
 
+# 指定入口文件
+main = "src/index.js"
+
 # 设置定时任务 - 每13分钟执行一次
 [[triggers]]
 cron = "*/13 * * * *"
@@ -10,10 +13,12 @@ cron = "*/13 * * * *"
 [vars]
 TARGET_URL = "https://mk64-j7xs.onrender.com"
 
-# 日志设置（使用新格式）
+# 日志设置
 [logging]
 push = true
 
+# 明确指定没有静态资源
 [build]
 command = ""
+
 
